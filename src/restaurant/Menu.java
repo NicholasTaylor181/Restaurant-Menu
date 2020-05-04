@@ -11,9 +11,34 @@ public class Menu {
 
 
     public void addMenuItem(MenuItem aMenuItem) {
-        menuItems.add(aMenuItem);
-        lastUpdate = new Date();
+        int num = 0;
+        for(MenuItem item : menuItems) {
+            if (item.equals(aMenuItem)) {
+                num = 1;
+                System.out.println("Sorry this item is a duplicate, and wont be added.");
+            }
+        }
+        if (num == 0) {
+            menuItems.add(aMenuItem);
+            lastUpdate = new Date();
+
+        }
     }
+
+    public void removeMenuItem(MenuItem aMenuItem) {
+        menuItems.remove(aMenuItem);
+    }
+
+    public void printItem(MenuItem aMenuItem) {
+        if (aMenuItem.getIsNew()) {
+
+            System.out.println(aMenuItem.getName() + ":  Price: " + aMenuItem.getPrice() + " Description: " + aMenuItem.getDescription() + " (New!)");
+        } else {
+            System.out.println(aMenuItem.getName() + ":  Price: " + aMenuItem.getPrice() + " Description: " + aMenuItem.getDescription());
+        }
+
+    }
+
 
     public void printMenu() {
         ArrayList<MenuItem> appetizers = new ArrayList<>();

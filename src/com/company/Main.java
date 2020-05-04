@@ -59,6 +59,26 @@ public class Main {
         currentMenu.addMenuItem(hotWings);
         currentMenu.addMenuItem(hamburger);
 
+
+
+        currentMenu.printMenu();
+
+        currentMenu.printItem(cake);
+
+        MenuItem yellowCake = new MenuItem();
+        yellowCake.setName("Cake");
+        yellowCake.setPrice(2.99);
+        yellowCake.setDescription("Fluffy Yellow Cake");
+        yellowCake.setCategory("Dessert");
+        yellowCake.setIsNew(true);
+
+        System.out.println(cake.equals(yellowCake));
+        System.out.println(cake.equals(friedFish));
+
+        currentMenu.addMenuItem(yellowCake);
+
+        currentMenu.removeMenuItem(hamburger);
+
         currentMenu.printMenu();
     }
 }
